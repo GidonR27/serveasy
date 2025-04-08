@@ -8,26 +8,146 @@ import emailjs from '@emailjs/browser';
 
 // Category icons mapping
 const categoryIcons: Record<string, string> = {
-  'Beverages': '☕',
+  'Beverage': '☕',
   'Sandwiches': '🥪',
   'Salads': '🥗',
   'Pizza': '🍕',
   'Pasta': '🍝',
   'Burgers': '🍔',
   'Main Courses': '🍽️',
-  'Desserts': '🍰',
+  'Dessert': '🍰',
   'Appetizers': '🥟',
   'Soups': '🥣',
+  'Beer': '🍺',
+  'Alcohol': '🥃',
+  'Snack': '🍟',
+  'Indian': '🍛',
+  'Food': '🍲',
+};
+
+// Item-specific icons
+const itemIcons: Record<string, string> = {
+  // Beverages
+  'Coffee': '☕',
+  'Black Coffee': '☕',
+  'Coke': '🥤',
+  'Diet Coke': '🥤',
+  'Coke Zero': '🥤',
+  'Sprite Zero': '🥤',
+  'Pineapple Juice': '🍍',
+  'Banana Lassi': '🍌',
+  'Mango Lassi': '🥭',
+  'Sweet Lassi': '🥛',
+  'Buttermilk': '🥛',
+  'Water': '💧',
+  'Lime Soda': '🍋',
+  'Tonic Water': '💦',
+  'Ginger Ale': '🍸',
+  'Red Bull': '🏃',
+  'Green Smoothie': '🥝',
+  
+  // Beer
+  'Kingfisher Beer': '🍺',
+  'Tuborg': '🍻',
+  'Premium Pint/Large': '🍺',
+  'Strong Pint/Large': '🍺',
+  'Ultra Beer': '⚡',
+  'Budweiser': '🇺🇸',
+  'Magnum': '🍺',
+  'Heineken': '🇳🇱',
+  'Corona': '👑',
+  'Peoples': '🍺',
+  'Kings': '👑',
+  'Simba Wit': '🦁',
+  'Simba Blond': '🦁',
+  '8 Fingers': '👐',
+  'San Mungel': '🍺',
+  'Breezer': '🍹',
+  
+  // Alcohol
+  'Old Monk Rum': '🥃',
+  'Whiskey (Blenders Pride)': '🥃',
+  'Whiskey – Fireball': '🔥',
+  'Whiskey – Jameson': '🇮🇪',
+  'Whiskey – Jack Daniels': '🥃',
+  'Gin – Hapusa': '🍸',
+  'Gin – Greater Than': '🍸',
+  'Gin – Bombay Sapphire': '🍸',
+  'Rum – Bacardi White': '🥃',
+  'Rum – Bacardi Lemon': '🥃',
+  'Single Malt Whisky – Paul John Nirvana': '🥃',
+  'Single Malt Whisky – Amrut Fusion': '🥃',
+  'Single Malt Whisky – Glenfiddich 12yrs': '🥃',
+  'Vodka – Romanov': '🍸',
+  'Vodka – Absolut': '🍸',
+  'Vodka – Ciroc': '🍸',
+  'Shot – El Charro Tequila': '🥃',
+  'Shot – Jagerbomb': '💣',
+  'Shot – B52': '🥃',
+  'Brandy – Mansion House': '🥃',
+  'Brandy – Honey Bee': '🥃',
+  'Brandy – Baudin': '🥃',
+  'Fenny – Coconut': '🥥',
+  'Fenny – Cashew': '🥜',
+  'Cocktail – Whiskey Sour': '🍋',
+  'Cocktail – Cosmopolitan': '🍸',
+  'Cocktail – Long Island Iced Tea': '🧊',
+  'Mocktail – Disney Bar': '🍹',
+  'Mocktail – Blue Lagoon': '🔵',
+  'Mocktail – Sea Peng': '🌊',
+  'Dylan Special Cocktail – Bondearm': '🍹',
+  'Dylan Special Cocktail – Coco Chilli Willy': '🌶️',
+  'Dylan Special Cocktail – Malana Bong': '🍹',
+  'Wine – Sula Red (glass)': '🍷',
+  'Wine – Sula Red (bottle)': '🍾',
+  'Wine – Jacob\'s Creek Red (glass)': '🍷',
+  'Wine – Big Banyan Red (glass)': '🍷',
+  
+  // Food
+  'French Fries': '🍟',
+  'Veg Sandwich': '🥪',
+  'Chicken Sandwich': '🥪',
+  'Club Sandwich': '🥪',
+  'Samosa': '🥟',
+  'Vada Pav': '🥖',
+  'Dal Tadka': '🥘',
+  'Steamed Rice': '🍚',
+  'Veg Biryani': '🥘',
+  'Chicken Biryani': '🥘',
+  'Paneer Butter Masala': '🍲',
+  'Butter Chicken': '🍲',
+  'Roti': '🫔',
+  'Naan': '🫓',
+  'Pasta (Creamy Veg)': '🍝',
+  'Margarita Pizza': '🍕',
+  'Vegetarian Pizza': '🍕',
+  'Chicken Wings': '🍗',
+  'Vegetable Stir Fry': '🥦',
+  'Fish and Chips': '🐟',
+  'Mushroom Risotto': '🍄',
+  'Vegetable Soup': '🥣',
+  'Cheese Platter': '🧀',
+  'Grilled Salmon': '🐟',
+  
+  // Desserts
+  'Chocolate Cake': '🍰',
+  'Gulab Jamun': '🍯',
+  'Rasmalai': '🥮',
+  'Ice Cream Sundae': '🍨',
+  'Fruit Plate': '🍎',
 };
 
 // Get unique categories from menuItems
 const getUniqueCategories = () => {
   const categories = menuItems.map(item => item.category);
-  // Filter out Appetizers, Soups, and Beverages since we'll add it manually
-  const uniqueCategories = [...new Set(categories)].filter(cat => 
-    cat !== 'Appetizers' && cat !== 'Soups' && cat !== 'Beverages'
+  const uniqueSet = [...new Set(categories)];
+  
+  // Filter out categories we add manually - using case insensitive comparison
+  const uniqueCategories = uniqueSet.filter(cat => 
+    !['appetizers', 'soups', 'beverage', 'food'].includes(cat.toLowerCase())
   );
-  return ['Top 20', 'All', 'Beverages', 'Food', ...uniqueCategories];
+  
+  return ['Top 20', 'All', 'Beverage', 'Food', ...uniqueCategories];
 };
 
 export default function Home() {
@@ -54,9 +174,14 @@ export default function Home() {
       // Sort by rating or popularity and return top 20
       return item.popularity && item.popularity >= 3;
     }
-    if (selectedCategory === 'Beverages') return item.category === 'Beverages';
-    if (selectedCategory === 'Food') return item.category !== 'Beverages';
-    return item.category === selectedCategory;
+    if (selectedCategory === 'Beverage') return item.category === 'Beverage';
+    if (selectedCategory === 'Food') return item.category !== 'Beverage' && item.category !== 'Beer' && item.category !== 'Alcohol';
+    
+    // Handle both singular and plural forms of the category
+    const singularCategory = selectedCategory.endsWith('s') ? selectedCategory.slice(0, -1) : selectedCategory;
+    const pluralCategory = selectedCategory.endsWith('s') ? selectedCategory : selectedCategory + 's';
+    
+    return item.category === selectedCategory || item.category === singularCategory || item.category === pluralCategory;
   });
 
   // Sort top 20 items to the beginning if that category is selected
@@ -230,10 +355,10 @@ export default function Home() {
               <div className="p-3">
                 <div className="flex flex-col items-center">
                   <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center text-4xl mb-2 shadow-inner">
-                    {categoryIcons[item.category] || '🍴'}
+                    {itemIcons[item.name] || categoryIcons[item.category] || '🍴'}
                   </div>
                   <h3 className="font-semibold text-gray-900 text-sm text-center mb-1">{item.name}</h3>
-                  <p className="text-xs text-amber-900 mb-3 font-semibold">${item.price.toFixed(2)}</p>
+                  <p className="text-xs text-amber-900 mb-3 font-semibold">₹{item.price.toFixed(2)}</p>
                   <div className="flex items-center space-x-3">
                     {getItemQuantity(item.id) > 0 && (
                       <>
@@ -324,7 +449,7 @@ export default function Home() {
               <div>
                 <span className="font-medium">{totalItems} item{totalItems !== 1 ? 's' : ''}</span>
                 <span className="mx-2 text-amber-400">|</span>
-                <span className="font-bold text-amber-800">${totalPrice}</span>
+                <span className="font-bold text-amber-800">₹{totalPrice}</span>
               </div>
               <button 
                 className="text-amber-700 text-sm font-medium hover:text-amber-800 transition-colors"
@@ -373,7 +498,7 @@ export default function Home() {
                     )}
                   </div>
                 </div>
-                <p className="font-medium text-amber-800">${(item.menuItem.price * item.quantity).toFixed(2)}</p>
+                <p className="font-medium text-amber-800">₹{(item.menuItem.price * item.quantity).toFixed(2)}</p>
               </div>
             ))}
             
@@ -391,7 +516,7 @@ export default function Home() {
             <div className="mt-5 pt-4 border-t border-amber-100">
               <div className="flex justify-between font-bold mb-5">
                 <span>Total</span>
-                <span className="text-amber-800">${totalPrice}</span>
+                <span className="text-amber-800">₹{totalPrice}</span>
               </div>
               
               <button
@@ -424,7 +549,7 @@ export default function Home() {
               {submittedItems.map((item, index) => (
                 <div key={index} className="relative">
                   <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center text-3xl shadow-md" title={item.menuItem.name}>
-                    {categoryIcons[item.menuItem.category] || '🍴'}
+                    {itemIcons[item.menuItem.name] || categoryIcons[item.menuItem.category] || '🍴'}
                   </div>
                   <div className="absolute -top-2 -right-2 bg-amber-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold shadow-md">
                     {item.quantity}

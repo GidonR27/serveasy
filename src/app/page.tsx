@@ -129,33 +129,33 @@ export default function Home() {
         {/* Menu Grid */}
         <div className="grid grid-cols-2 gap-4 mb-20">
           {menuItems.map((item) => (
-            <div key={item.id} className="bg-white rounded-lg shadow-md overflow-hidden border-2 border-amber-300">
-              <div className="p-4">
+            <div key={item.id} className="bg-white rounded-lg shadow-md overflow-hidden border border-amber-100">
+              <div className="p-3">
                 <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center text-4xl mb-3 shadow-inner">
+                  <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center text-4xl mb-2 shadow-inner">
                     {categoryIcons[item.category] || '🍴'}
                   </div>
-                  <h3 className="font-bold text-base text-center mb-1 text-gray-900">{item.name}</h3>
-                  <p className="text-base text-amber-900 mb-3 font-bold">${item.price.toFixed(2)}</p>
+                  <h3 className="font-semibold text-sm text-black text-center mb-1">{item.name}</h3>
+                  <p className="text-xs text-amber-800 font-semibold mb-3">${item.price.toFixed(2)}</p>
                   <div className="flex items-center space-x-3">
                     {getItemQuantity(item.id) > 0 && (
                       <>
                         <button
                           onClick={() => removeFromOrder(item.id)}
-                          className="bg-gray-200 text-gray-700 w-9 h-9 rounded-full flex items-center justify-center shadow-md hover:bg-gray-300 transition-colors border border-gray-300"
+                          className="bg-gray-100 text-gray-700 w-8 h-8 rounded-full flex items-center justify-center shadow-sm hover:bg-gray-200 transition-colors"
                         >
-                          <span className="text-base font-bold">-</span>
+                          <span className="text-sm font-medium">-</span>
                         </button>
-                        <span className="text-sm w-6 text-center font-bold">
+                        <span className="text-sm w-5 text-center font-medium">
                           {getItemQuantity(item.id)}
                         </span>
                       </>
                     )}
                     <button
                       onClick={() => addToOrder(item)}
-                      className="bg-amber-600 text-white w-9 h-9 rounded-full flex items-center justify-center shadow-md hover:bg-amber-700 transition-colors"
+                      className="bg-amber-600 text-white w-8 h-8 rounded-full flex items-center justify-center shadow-sm hover:bg-amber-700 transition-colors"
                     >
-                      <span className="text-base font-bold">+</span>
+                      <span className="text-sm font-medium">+</span>
                     </button>
                   </div>
                 </div>
@@ -267,7 +267,7 @@ export default function Home() {
                     <span className="text-sm font-bold text-amber-800">{item.quantity}x</span>
                   </div>
                   <div>
-                    <p className="font-medium">{item.menuItem.name}</p>
+                    <p className="font-semibold text-black">{item.menuItem.name}</p>
                     {item.selectedOptions && Object.entries(item.selectedOptions).length > 0 && (
                       <p className="text-xs text-gray-500">
                         {Object.entries(item.selectedOptions).map(([key, value]) => `${key}: ${value}`).join(', ')}
@@ -275,7 +275,7 @@ export default function Home() {
                     )}
                   </div>
                 </div>
-                <p className="font-medium text-amber-800">${(item.menuItem.price * item.quantity).toFixed(2)}</p>
+                <p className="font-semibold text-amber-800">${(item.menuItem.price * item.quantity).toFixed(2)}</p>
               </div>
             ))}
             

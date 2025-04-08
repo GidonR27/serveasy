@@ -2,9 +2,9 @@
 
 This is a Next.js application for room service ordering in a resort setting.
 
-## Note about missing files
+## Note about files
 
-The cover image file 'dylan.png' should be placed in the public/covers directory. It was too large to push to GitHub directly.
+The cover image file 'dylan.jpg' should be placed in the public/covers directory.
 
 ## Getting Started
 

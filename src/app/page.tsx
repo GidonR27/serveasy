@@ -106,8 +106,8 @@ export default function Home() {
       {/* Resort Cover Photo */}
       <div className="relative h-52 w-full overflow-hidden">
         <Image 
-          src="/covers/dylan.png" 
-          alt="Dylan's Resort"
+          src="/covers/dylan.jpg" 
+          alt="Dylan&apos;s Resort"
           fill
           style={{ objectFit: 'cover' }}
           priority
@@ -115,7 +115,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black opacity-70"></div>
         <div className="absolute inset-x-0 bottom-0 p-5 text-white flex justify-between items-end">
           <div>
-            <h1 className="text-2xl font-bold drop-shadow-md">Dylan's Resort</h1>
+            <h1 className="text-2xl font-bold drop-shadow-md">Dylan&apos;s Resort</h1>
             <p className="text-sm font-medium text-amber-200">Service open 8AM-8PM</p>
           </div>
           <div className="bg-amber-500 bg-opacity-90 text-white px-3 py-1 rounded-full text-sm font-medium shadow-md">

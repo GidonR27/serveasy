@@ -129,33 +129,33 @@ export default function Home() {
         {/* Menu Grid */}
         <div className="grid grid-cols-2 gap-4 mb-20">
           {menuItems.map((item) => (
-            <div key={item.id} className="bg-white rounded-lg shadow-md overflow-hidden border border-amber-100">
-              <div className="p-3">
+            <div key={item.id} className="bg-white rounded-lg shadow-md overflow-hidden border-2 border-amber-300">
+              <div className="p-4">
                 <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center text-4xl mb-2 shadow-inner">
+                  <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center text-4xl mb-3 shadow-inner">
                     {categoryIcons[item.category] || '🍴'}
                   </div>
-                  <h3 className="font-medium text-sm text-center mb-1">{item.name}</h3>
-                  <p className="text-xs text-amber-700 mb-3 font-medium">${item.price.toFixed(2)}</p>
+                  <h3 className="font-bold text-base text-center mb-1 text-gray-900">{item.name}</h3>
+                  <p className="text-base text-amber-900 mb-3 font-bold">${item.price.toFixed(2)}</p>
                   <div className="flex items-center space-x-3">
                     {getItemQuantity(item.id) > 0 && (
                       <>
                         <button
                           onClick={() => removeFromOrder(item.id)}
-                          className="bg-gray-100 text-gray-700 w-8 h-8 rounded-full flex items-center justify-center shadow-sm hover:bg-gray-200 transition-colors"
+                          className="bg-gray-200 text-gray-700 w-9 h-9 rounded-full flex items-center justify-center shadow-md hover:bg-gray-300 transition-colors border border-gray-300"
                         >
-                          <span className="text-sm font-medium">-</span>
+                          <span className="text-base font-bold">-</span>
                         </button>
-                        <span className="text-sm w-5 text-center font-medium">
+                        <span className="text-sm w-6 text-center font-bold">
                           {getItemQuantity(item.id)}
                         </span>
                       </>
                     )}
                     <button
                       onClick={() => addToOrder(item)}
-                      className="bg-amber-600 text-white w-8 h-8 rounded-full flex items-center justify-center shadow-sm hover:bg-amber-700 transition-colors"
+                      className="bg-amber-600 text-white w-9 h-9 rounded-full flex items-center justify-center shadow-md hover:bg-amber-700 transition-colors"
                     >
-                      <span className="text-sm font-medium">+</span>
+                      <span className="text-base font-bold">+</span>
                     </button>
                   </div>
                 </div>

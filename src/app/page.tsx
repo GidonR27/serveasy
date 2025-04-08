@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { menuItems } from '@/data/menuItems';
 import { MenuItem, OrderItem } from '@/types/menu';
 import Image from 'next/image';
+import emailjs from '@emailjs/browser';
 
 // Category icons mapping
 const categoryIcons: Record<string, string> = {
@@ -37,6 +38,14 @@ export default function Home() {
   const [selectedOptions, setSelectedOptions] = useState<{[key: string]: string}>({});
   const [showOrderDetails, setShowOrderDetails] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('Top 20');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const [submittedItems, setSubmittedItems] = useState<OrderItem[]>([]);
+
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init('2A19yeF-CXJz3zLrB');
+  }, []);
 
   // Filter menu items based on selected category
   const filteredMenuItems = menuItems.filter(item => {
@@ -105,16 +114,57 @@ export default function Home() {
       alert('Please add items to your order');
       return;
     }
-    // Here you would typically send the order to your backend
-    console.log('Order submitted:', {
-      items: orderItems,
-      roomNumber,
-      specialInstructions
-    });
-    alert('Order submitted successfully!');
-    setOrderItems([]);
-    setSpecialInstructions('');
-    setShowOrderDetails(false);
+
+    setIsSubmitting(true);
+
+    // Store current order items for confirmation popup
+    setSubmittedItems([...orderItems]);
+    
+    // Generate a random order ID
+    const orderId = Math.floor(100000 + Math.random() * 900000).toString();
+    
+    // Calculate order totals
+    const subtotal = orderItems.reduce((total, item) => total + (item.menuItem.price * item.quantity), 0);
+    const tax = subtotal * 0.08; // 8% tax
+    const total = subtotal + tax;
+    
+    // Prepare data for email template
+    const templateParams = {
+      room_id: roomNumber,
+      order_id: orderId,
+      orders: orderItems.map(item => ({
+        name: item.menuItem.name,
+        units: item.quantity,
+        price: (item.menuItem.price * item.quantity).toFixed(2)
+      })),
+      cost: {
+        shipping: '0.00',
+        tax: tax.toFixed(2),
+        total: total.toFixed(2)
+      },
+      special_instructions: specialInstructions
+    };
+
+    // Send email using EmailJS
+    emailjs.send(
+      'service_twcb6z9', // Service ID
+      'template_27xkuz5', // Template ID
+      templateParams,
+      '2A19yeF-CXJz3zLrB' // Public Key
+    )
+      .then((response) => {
+        console.log('Email sent successfully:', response);
+        setOrderItems([]);
+        setSpecialInstructions('');
+        setShowOrderDetails(false);
+        setIsSubmitting(false);
+        setShowConfirmation(true); // Show confirmation popup
+      })
+      .catch((error) => {
+        console.error('Email sending failed:', error);
+        alert('There was an error submitting your order. Please try again.');
+        setIsSubmitting(false);
+      });
   };
 
   // Function to safely get item quantity
@@ -285,9 +335,10 @@ export default function Home() {
             </div>
             <button
               onClick={handleSubmit}
-              className="w-full bg-amber-600 text-white py-3 rounded-lg font-semibold shadow-md hover:bg-amber-700 transition-colors"
+              disabled={isSubmitting}
+              className="w-full bg-amber-600 text-white py-3 rounded-lg font-semibold shadow-md hover:bg-amber-700 transition-colors disabled:bg-amber-400 disabled:cursor-not-allowed"
             >
-              Submit Order
+              {isSubmitting ? 'Submitting...' : 'Submit Order'}
             </button>
           </div>
         </div>
@@ -345,11 +396,49 @@ export default function Home() {
               
               <button
                 onClick={handleSubmit}
-                className="w-full bg-amber-600 text-white py-3 rounded-lg font-semibold shadow-md hover:bg-amber-700 transition-colors"
+                disabled={isSubmitting}
+                className="w-full bg-amber-600 text-white py-3 rounded-lg font-semibold shadow-md hover:bg-amber-700 transition-colors disabled:bg-amber-400 disabled:cursor-not-allowed"
               >
-                Submit Order
+                {isSubmitting ? 'Submitting...' : 'Submit Order'}
               </button>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Order Confirmation Popup */}
+      {showConfirmation && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-30 backdrop-blur-sm">
+          <div className="bg-white rounded-lg p-6 w-full max-w-md shadow-xl text-center">
+            <div className="mb-4">
+              <div className="w-20 h-20 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-2">Order Confirmed!</h3>
+              <p className="text-lg text-gray-600 mb-6">Your order will arrive shortly</p>
+            </div>
+            
+            <div className="flex flex-wrap justify-center gap-3 mb-6">
+              {submittedItems.map((item, index) => (
+                <div key={index} className="relative">
+                  <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center text-3xl shadow-md" title={item.menuItem.name}>
+                    {categoryIcons[item.menuItem.category] || '🍴'}
+                  </div>
+                  <div className="absolute -top-2 -right-2 bg-amber-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold shadow-md">
+                    {item.quantity}
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <button
+              onClick={() => setShowConfirmation(false)}
+              className="w-full bg-amber-600 text-white py-3 rounded-lg font-semibold shadow-md hover:bg-amber-700 transition-colors"
+            >
+              Close
+            </button>
           </div>
         </div>
       )}

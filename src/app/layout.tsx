@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     description: "2 Clicks and it's here",
     images: [
       {
-        url: "/serveasy.jpg",
+        url: "/serveasy630.jpg",
         width: 1024,
-        height: 1024,
+        height: 630,
         alt: "ServEasy Logo",
       },
     ],
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ServEasy",
     description: "2 Clicks and it's here",
-    images: ["/serveasy.jpg"],
+    images: ["/serveasy630.jpg"],
   },
 };
 

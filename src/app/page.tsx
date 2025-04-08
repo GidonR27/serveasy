@@ -118,7 +118,7 @@ export default function Home() {
             <h1 className="text-2xl font-bold drop-shadow-md">Dylan&apos;s Resort</h1>
             <p className="text-sm font-medium text-amber-200">Service open 8AM-8PM</p>
           </div>
-          <div className="bg-amber-500 bg-opacity-90 text-white px-3 py-1 rounded-full text-sm font-medium shadow-md">
+          <div className="bg-amber-600 bg-opacity-90 text-white px-3 py-1 rounded-full text-sm font-medium shadow-md">
             Room {roomNumber}
           </div>
         </div>
@@ -132,7 +132,7 @@ export default function Home() {
             <div key={item.id} className="bg-white rounded-lg shadow-md overflow-hidden border border-amber-100">
               <div className="p-3">
                 <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-amber-50 rounded-full flex items-center justify-center text-4xl mb-2 shadow-inner">
+                  <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center text-4xl mb-2 shadow-inner">
                     {categoryIcons[item.category] || '🍴'}
                   </div>
                   <h3 className="font-medium text-sm text-center mb-1">{item.name}</h3>
@@ -153,7 +153,7 @@ export default function Home() {
                     )}
                     <button
                       onClick={() => addToOrder(item)}
-                      className="bg-amber-500 text-white w-8 h-8 rounded-full flex items-center justify-center shadow-sm hover:bg-amber-600 transition-colors"
+                      className="bg-amber-600 text-white w-8 h-8 rounded-full flex items-center justify-center shadow-sm hover:bg-amber-700 transition-colors"
                     >
                       <span className="text-sm font-medium">+</span>
                     </button>
@@ -167,7 +167,7 @@ export default function Home() {
         {/* Something Else Button */}
         <div className="mb-20">
           <button 
-            className="w-full py-3 border-2 border-dashed border-amber-300 rounded-lg text-amber-700 flex items-center justify-center hover:bg-amber-50 transition-colors"
+            className="w-full py-3 border-2 border-dashed border-amber-400 rounded-lg text-amber-800 flex items-center justify-center hover:bg-amber-50 transition-colors"
             onClick={() => alert("This would open a form to request a custom item")}
           >
             <span className="mr-2 font-medium">Something Else</span>
@@ -210,7 +210,7 @@ export default function Home() {
                   const item = menuItems.find(item => item.id === showOptions);
                   if (item) confirmOptions(item);
                 }}
-                className="px-4 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600 transition-colors"
+                className="px-4 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors"
               >
                 Confirm
               </button>
@@ -221,16 +221,16 @@ export default function Home() {
 
       {/* Order Summary and Submit Button (Fixed at bottom) */}
       {orderItems.length > 0 && (
-        <div className="fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t border-amber-100 p-4 z-10">
+        <div className="fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t border-amber-200 p-4 z-10">
           <div className="max-w-md mx-auto">
             <div className="flex justify-between items-center mb-3">
               <div>
                 <span className="font-medium">{totalItems} item{totalItems !== 1 ? 's' : ''}</span>
-                <span className="mx-2 text-amber-300">|</span>
-                <span className="font-bold text-amber-700">${totalPrice}</span>
+                <span className="mx-2 text-amber-400">|</span>
+                <span className="font-bold text-amber-800">${totalPrice}</span>
               </div>
               <button 
-                className="text-amber-500 text-sm font-medium hover:text-amber-600 transition-colors"
+                className="text-amber-700 text-sm font-medium hover:text-amber-800 transition-colors"
                 onClick={() => setShowOrderDetails(true)}
               >
                 View Order
@@ -238,7 +238,7 @@ export default function Home() {
             </div>
             <button
               onClick={handleSubmit}
-              className="w-full bg-amber-500 text-white py-3 rounded-lg font-semibold shadow-md hover:bg-amber-600 transition-colors"
+              className="w-full bg-amber-600 text-white py-3 rounded-lg font-semibold shadow-md hover:bg-amber-700 transition-colors"
             >
               Submit Order
             </button>
@@ -263,8 +263,8 @@ export default function Home() {
             {orderItems.map((item, index) => (
               <div key={index} className="flex justify-between items-center mb-4 pb-3 border-b border-amber-100">
                 <div className="flex items-start">
-                  <div className="bg-amber-50 h-10 w-10 rounded-full flex-shrink-0 flex items-center justify-center mr-3 shadow-inner">
-                    <span className="text-sm font-bold text-amber-700">{item.quantity}x</span>
+                  <div className="bg-amber-100 h-10 w-10 rounded-full flex-shrink-0 flex items-center justify-center mr-3 shadow-inner">
+                    <span className="text-sm font-bold text-amber-800">{item.quantity}x</span>
                   </div>
                   <div>
                     <p className="font-medium">{item.menuItem.name}</p>
@@ -275,7 +275,7 @@ export default function Home() {
                     )}
                   </div>
                 </div>
-                <p className="font-medium text-amber-700">${(item.menuItem.price * item.quantity).toFixed(2)}</p>
+                <p className="font-medium text-amber-800">${(item.menuItem.price * item.quantity).toFixed(2)}</p>
               </div>
             ))}
             
@@ -293,12 +293,12 @@ export default function Home() {
             <div className="mt-5 pt-4 border-t border-amber-100">
               <div className="flex justify-between font-bold mb-5">
                 <span>Total</span>
-                <span className="text-amber-700">${totalPrice}</span>
+                <span className="text-amber-800">${totalPrice}</span>
               </div>
               
               <button
                 onClick={handleSubmit}
-                className="w-full bg-amber-500 text-white py-3 rounded-lg font-semibold shadow-md hover:bg-amber-600 transition-colors"
+                className="w-full bg-amber-600 text-white py-3 rounded-lg font-semibold shadow-md hover:bg-amber-700 transition-colors"
               >
                 Submit Order
               </button>

@@ -22,61 +22,61 @@
     "menu": [
       {
         "description": "Freshly brewed coffee with your choice of style",
-        "icon_url": "/assets/coffee.png",
+        "icon_url": "☕",
         "name": "Coffee",
         "price": "90"
       },
       {
         "description": "Strong black coffee",
-        "icon_url": "/assets/black_coffee.png",
+        "icon_url": "☕",
         "name": "Black Coffee",
         "price": "70"
       },
       {
         "description": "Refreshing can/bottle of Coke",
-        "icon_url": "/assets/coke.png",
+        "icon_url": "🥤",
         "name": "Coke",
         "price": "60"
       },
       {
         "description": "Fresh pineapple juice",
-        "icon_url": "/assets/pineapple_juice.png",
+        "icon_url": "🍍",
         "name": "Pineapple Juice",
         "price": "150"
       },
       {
         "description": "Creamy banana yogurt drink",
-        "icon_url": "/assets/banana_lassi.png",
+        "icon_url": "🍌",
         "name": "Banana Lassi",
         "price": "150"
       },
       {
         "description": "Sweet mango yogurt drink",
-        "icon_url": "/assets/mango_lassi.png",
+        "icon_url": "🥭",
         "name": "Mango Lassi",
         "price": "150"
       },
       {
         "description": "Traditional sweet yogurt drink",
-        "icon_url": "/assets/sweet_lassi.png",
+        "icon_url": "🥛",
         "name": "Sweet Lassi",
         "price": "120"
       },
       {
         "description": "Bottled mineral water",
-        "icon_url": "/assets/water_bottle_80_px.png",
+        "icon_url": "💧",
         "name": "Water",
         "price": "20"
       },
       {
         "description": "Pint of Kingfisher beer",
-        "icon_url": "/assets/beer_kingfisher.png",
+        "icon_url": "🍺",
         "name": "Kingfisher Beer",
         "price": "170"
       },
       {
         "description": "Corona beer",
-        "icon_url": "/assets/beer_corona.png",
+        "icon_url": "👑",
         "name": "Corona",
         "price": "200"
       }
@@ -126,415 +126,415 @@
   "menu_items": [
     {
       "description": "Freshly brewed coffee with your choice of style",
-      "icon_url": "/assets/coffee.png",
+      "icon_url": "☕",
       "name": "Coffee",
       "price": "90"
     },
     {
       "description": "Strong black coffee",
-      "icon_url": "/assets/black_coffee.png",
+      "icon_url": "☕",
       "name": "Black Coffee",
       "price": "70"
     },
     {
       "description": "Refreshing can/bottle of Coke",
-      "icon_url": "/assets/coke.png",
+      "icon_url": "🥤",
       "name": "Coke",
       "price": "60"
     },
     {
       "description": "Fresh pineapple juice",
-      "icon_url": "/assets/pineapple_juice.png",
+      "icon_url": "🍍",
       "name": "Pineapple Juice",
       "price": "150"
     },
     {
       "description": "Creamy banana yogurt drink",
-      "icon_url": "/assets/banana_lassi.png",
+      "icon_url": "🍌",
       "name": "Banana Lassi",
       "price": "150"
     },
     {
       "description": "Sweet mango yogurt drink",
-      "icon_url": "/assets/mango_lassi.png",
+      "icon_url": "🥭",
       "name": "Mango Lassi",
       "price": "150"
     },
     {
       "description": "Traditional sweet yogurt drink",
-      "icon_url": "/assets/sweet_lassi.png",
+      "icon_url": "🥛",
       "name": "Sweet Lassi",
       "price": "120"
     },
     {
       "description": "Refreshing spiced buttermilk",
-      "icon_url": "/assets/buttermilk.png",
+      "icon_url": "🥛",
       "name": "Buttermilk",
       "price": "150"
     },
     {
       "description": "Bottled mineral water",
-      "icon_url": "/assets/water_bottle_80_px.png",
+      "icon_url": "💧",
       "name": "Water",
       "price": "20"
     },
     {
       "description": "Refreshing lime soda",
-      "icon_url": "/assets/lime_soda.png",
+      "icon_url": "🍋",
       "name": "Lime Soda",
       "price": "70"
     },
     {
       "description": "Sparkling tonic water",
-      "icon_url": "/assets/tonic_water.png",
+      "icon_url": "💦",
       "name": "Tonic Water",
       "price": "120"
     },
     {
       "description": "Spicy ginger ale",
-      "icon_url": "/assets/ginger_ale.png",
+      "icon_url": "🍸",
       "name": "Ginger Ale",
       "price": "120"
     },
     {
       "description": "Sugar-free Diet Coke",
-      "icon_url": "/assets/diet_coke.png",
+      "icon_url": "🥤",
       "name": "Diet Coke",
       "price": "100"
     },
     {
       "description": "Zero sugar Coke",
-      "icon_url": "/assets/coke_zero.png",
+      "icon_url": "🥤",
       "name": "Coke Zero",
       "price": "100"
     },
     {
       "description": "Zero sugar Sprite",
-      "icon_url": "/assets/sprite_zero.png",
+      "icon_url": "🥤",
       "name": "Sprite Zero",
       "price": "100"
     },
     {
       "description": "Energy drink",
-      "icon_url": "/assets/redbull.png",
+      "icon_url": "🏃",
       "name": "Red Bull",
       "price": "200"
     },
     {
       "description": "Pint of Kingfisher beer",
-      "icon_url": "/assets/beer_kingfisher.png",
+      "icon_url": "🍺",
       "name": "Kingfisher Beer",
       "price": "170"
     },
     {
       "description": "Classic dark rum",
-      "icon_url": "/assets/old_monk.png",
+      "icon_url": "🥃",
       "name": "Old Monk Rum",
       "price": "150"
     },
     {
       "description": "Premium blended whiskey",
-      "icon_url": "/assets/whiskey.png",
+      "icon_url": "🥃",
       "name": "Whiskey (Blenders Pride)",
       "price": "160"
     },
     {
       "description": "Crispy golden french fries",
-      "icon_url": "/assets/french_fries.png",
+      "icon_url": "🍟",
       "name": "French Fries",
       "price": "150"
     },
     {
       "description": "Fresh vegetable sandwich",
-      "icon_url": "/assets/veg_sandwich.png",
+      "icon_url": "🥪",
       "name": "Veg Sandwich",
       "price": "150"
     },
     {
       "description": "Grilled chicken sandwich",
-      "icon_url": "/assets/chicken_sandwich.png",
+      "icon_url": "🥪",
       "name": "Chicken Sandwich",
       "price": "250"
     },
     {
       "description": "Triple-decker sandwich with multiple fillings",
-      "icon_url": "/assets/club_sandwich.png",
+      "icon_url": "🥪",
       "name": "Club Sandwich",
       "price": "300"
     },
     {
       "description": "Crispy pastry with spiced potato filling (2 pcs)",
-      "icon_url": "/assets/samosa.png",
+      "icon_url": "🥟",
       "name": "Samosa",
       "price": "50"
     },
     {
       "description": "Spicy potato fritter in a bun",
-      "icon_url": "/assets/vada_pav.png",
+      "icon_url": "🥖",
       "name": "Vada Pav",
       "price": "40"
     },
     {
       "description": "Yellow lentil curry with spices",
-      "icon_url": "/assets/dal_tadka.png",
+      "icon_url": "🥘",
       "name": "Dal Tadka",
       "price": "180"
     },
     {
       "description": "Plain steamed basmati rice",
-      "icon_url": "/assets/steamed_rice.png",
+      "icon_url": "🍚",
       "name": "Steamed Rice",
       "price": "150"
     },
     {
       "description": "Fragrant rice with vegetables and spices",
-      "icon_url": "/assets/veg_biryani.png",
+      "icon_url": "🥘",
       "name": "Veg Biryani",
       "price": "220"
     },
     {
       "description": "Fragrant rice with chicken and spices",
-      "icon_url": "/assets/chicken_biryani.png",
+      "icon_url": "🥘",
       "name": "Chicken Biryani",
       "price": "300"
     },
     {
       "description": "Cottage cheese in rich tomato gravy",
-      "icon_url": "/assets/paneer_butter_masala.png",
+      "icon_url": "🍲",
       "name": "Paneer Butter Masala",
       "price": "250"
     },
     {
       "description": "Tender chicken in creamy tomato sauce",
-      "icon_url": "/assets/butter_chicken.png",
+      "icon_url": "🍲",
       "name": "Butter Chicken",
       "price": "300"
     },
     {
       "description": "Whole wheat flatbread (2 pcs)",
-      "icon_url": "/assets/roti.png",
+      "icon_url": "🫔",
       "name": "Roti",
       "price": "50"
     },
     {
       "description": "Soft leavened flatbread (Butter/Garlic)",
-      "icon_url": "/assets/naan.png",
+      "icon_url": "🫓",
       "name": "Naan",
       "price": "70"
     },
     {
       "description": "Pasta in creamy sauce with vegetables",
-      "icon_url": "/assets/pasta.png",
+      "icon_url": "🍝",
       "name": "Pasta (Creamy Veg)",
       "price": "250"
     },
     {
       "description": "Classic pizza with tomato and cheese",
-      "icon_url": "/assets/margarita_pizza.png",
+      "icon_url": "🍕",
       "name": "Margarita Pizza",
       "price": "300"
     },
     {
       "description": "Rich chocolate cake slice",
-      "icon_url": "/assets/chocolate_cake.png",
+      "icon_url": "🍰",
       "name": "Chocolate Cake",
       "price": "180"
     },
     {
       "description": "Sweet milk dumplings in sugar syrup (2 pcs)",
-      "icon_url": "/assets/gulab_jamun.png",
+      "icon_url": "🍯",
       "name": "Gulab Jamun",
       "price": "80"
     },
     {
       "description": "Soft cheese patties in sweetened milk (2 pcs)",
-      "icon_url": "/assets/rasmalai.png",
+      "icon_url": "🥮",
       "name": "Rasmalai",
       "price": "100"
     },
     {
       "description": "Tuborg beer",
-      "icon_url": "/assets/tuborg.png",
+      "icon_url": "🍻",
       "name": "Tuborg",
       "price": "110"
     },
     {
       "description": "Premium beer (large)",
-      "icon_url": "/assets/premium_beer.png",
+      "icon_url": "🍺",
       "name": "Premium Pint/Large",
       "price": "170"
     },
     {
       "description": "Strong beer (large)",
-      "icon_url": "/assets/strong_beer.png",
+      "icon_url": "🍺",
       "name": "Strong Pint/Large",
       "price": "220"
     },
     {
       "description": "Ultra beer",
-      "icon_url": "/assets/ultra_beer.png",
+      "icon_url": "⚡",
       "name": "Ultra Beer",
       "price": "140"
     },
     {
       "description": "Budweiser beer",
-      "icon_url": "/assets/budweiser.png",
+      "icon_url": "🇺🇸",
       "name": "Budweiser",
       "price": "140"
     },
     {
       "description": "Corona beer",
-      "icon_url": "/assets/beer_corona.png",
+      "icon_url": "👑",
       "name": "Corona",
       "price": "200"
     },
     {
       "description": "Cinnamon flavored whiskey",
-      "icon_url": "/assets/fireball.png",
+      "icon_url": "🔥",
       "name": "Whiskey – Fireball",
       "price": "250"
     },
     {
       "description": "Irish whiskey",
-      "icon_url": "/assets/jameson.png",
+      "icon_url": "🇮🇪",
       "name": "Whiskey – Jameson",
       "price": "270"
     },
     {
       "description": "Tennessee whiskey",
-      "icon_url": "/assets/jack_daniels.png",
+      "icon_url": "🥃",
       "name": "Whiskey – Jack Daniels",
       "price": "350"
     },
     {
       "description": "Indian craft gin",
-      "icon_url": "/assets/hapusa.png",
+      "icon_url": "🍸",
       "name": "Gin – Hapusa",
       "price": "350"
     },
     {
       "description": "Premium London dry gin",
-      "icon_url": "/assets/bombay_sapphire.png",
+      "icon_url": "🍸",
       "name": "Gin – Bombay Sapphire",
       "price": "360"
     },
     {
       "description": "White rum",
-      "icon_url": "/assets/bacardi_white.png",
+      "icon_url": "🥃",
       "name": "Rum – Bacardi White",
       "price": "220"
     },
     {
       "description": "Indian single malt whisky",
-      "icon_url": "/assets/paul_john.png",
+      "icon_url": "🥃",
       "name": "Single Malt Whisky – Paul John Nirvana",
       "price": "300"
     },
     {
       "description": "Premium vodka",
-      "icon_url": "/assets/absolut.png",
+      "icon_url": "🍸",
       "name": "Vodka – Absolut",
       "price": "300"
     },
     {
       "description": "Goan coconut spirit",
-      "icon_url": "/assets/coconut_fenny.png",
+      "icon_url": "🥥",
       "name": "Fenny – Coconut",
       "price": "200"
     },
     {
       "description": "Goan cashew spirit",
-      "icon_url": "/assets/cashew_fenny.png",
+      "icon_url": "🥜",
       "name": "Fenny – Cashew",
       "price": "200"
     },
     {
       "description": "Classic whiskey cocktail with lemon and sugar",
-      "icon_url": "/assets/whiskey_sour.png",
+      "icon_url": "🍋",
       "name": "Cocktail – Whiskey Sour",
       "price": "400"
     },
     {
       "description": "Strong cocktail with multiple spirits",
-      "icon_url": "/assets/long_island.png",
+      "icon_url": "🧊",
       "name": "Cocktail – Long Island Iced Tea",
       "price": "700"
     },
     {
       "description": "Non-alcoholic fruity mocktail",
-      "icon_url": "/assets/disney_bar.png",
+      "icon_url": "🍹",
       "name": "Mocktail – Disney Bar",
       "price": "280"
     },
     {
       "description": "Indian red wine by the glass",
-      "icon_url": "/assets/red_wine.png",
+      "icon_url": "🍷",
       "name": "Wine – Sula Red (glass)",
       "price": "170"
     },
     {
       "description": "Indian red wine by the bottle",
-      "icon_url": "/assets/wine_bottle.png",
+      "icon_url": "🍾",
       "name": "Wine – Sula Red (bottle)",
       "price": "700"
     },
     {
       "description": "Australian red wine by the glass",
-      "icon_url": "/assets/red_wine.png",
-      "name": "Wine - Jacob Creek Red (glass)",
+      "icon_url": "🍷",
+      "name": "Wine – Jacob Creek Red (glass)",
       "price": "200"
     },
     {
       "description": "Fresh vegetables in Asian sauce with rice",
-      "icon_url": "/assets/vegetable_stir_fry.png",
+      "icon_url": "🥦",
       "name": "Vegetable Stir Fry",
       "price": "250"
     },
     {
       "description": "Beer-battered cod with crispy fries",
-      "icon_url": "/assets/fish_and_chips.png",
+      "icon_url": "🐟",
       "name": "Fish and Chips",
       "price": "300"
     },
     {
       "description": "Loaded with fresh vegetables and cheese",
-      "icon_url": "/assets/vegetarian_pizza.png",
+      "icon_url": "🍕",
       "name": "Vegetarian Pizza",
       "price": "280"
     },
     {
       "description": "Spicy buffalo wings with blue cheese dip",
-      "icon_url": "/assets/chicken_wings.png",
+      "icon_url": "🍗",
       "name": "Chicken Wings",
       "price": "250"
     },
     {
       "description": "Creamy Arborio rice with wild mushrooms",
-      "icon_url": "/assets/mushroom_risotto.png",
+      "icon_url": "🍄",
       "name": "Mushroom Risotto",
       "price": "280"
     },
     {
       "description": "Spinach, banana, and apple blend",
-      "icon_url": "/assets/green_smoothie.png",
+      "icon_url": "🥝",
       "name": "Green Smoothie",
       "price": "150"
     },
     {
       "description": "Vanilla ice cream with chocolate sauce and nuts",
-      "icon_url": "/assets/ice_cream_sundae.png",
+      "icon_url": "🍨",
       "name": "Ice Cream Sundae",
       "price": "180"
     },
     {
       "description": "Fresh salmon with seasonal vegetables",
-      "icon_url": "/assets/grilled_salmon.png",
+      "icon_url": "🐟",
       "name": "Grilled Salmon",
       "price": "400"
     },
     {
       "description": "Seasonal fresh fruits",
-      "icon_url": "/assets/fruit_plate.png",
+      "icon_url": "🍎",
       "name": "Fruit Plate",
       "price": "150"
     }

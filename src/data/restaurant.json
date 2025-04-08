@@ -22,61 +22,61 @@
     "menu": [
       {
         "description": "Freshly brewed coffee with your choice of style",
-        "icon_url": "/assets/coffee.png",
+        "icon_url": "☕",
         "name": "Coffee",
         "price": "90"
       },
       {
         "description": "Strong black coffee",
-        "icon_url": "/assets/black_coffee.png",
+        "icon_url": "☕",
         "name": "Black Coffee",
         "price": "70"
       },
       {
         "description": "Refreshing can/bottle of Coke",
-        "icon_url": "/assets/coke.png",
+        "icon_url": "🥤",
         "name": "Coke",
         "price": "60"
       },
       {
         "description": "Fresh pineapple juice",
-        "icon_url": "/assets/pineapple_juice.png",
+        "icon_url": "🍍",
         "name": "Pineapple Juice",
         "price": "150"
       },
       {
         "description": "Creamy banana yogurt drink",
-        "icon_url": "/assets/banana_lassi.png",
+        "icon_url": "🍌",
         "name": "Banana Lassi",
         "price": "150"
       },
       {
         "description": "Sweet mango yogurt drink",
-        "icon_url": "/assets/mango_lassi.png",
+        "icon_url": "🥭",
         "name": "Mango Lassi",
         "price": "150"
       },
       {
         "description": "Bottled mineral water",
-        "icon_url": "/assets/water_bottle_80_px.png",
+        "icon_url": "💧",
         "name": "Water",
         "price": "20"
       },
       {
         "description": "Energy drink",
-        "icon_url": "/assets/redbull.png",
+        "icon_url": "🏃",
         "name": "Red Bull",
         "price": "200"
       },
       {
         "description": "Pint of Kingfisher beer",
-        "icon_url": "/assets/beer_kingfisher.png",
+        "icon_url": "🍺",
         "name": "Kingfisher Beer",
         "price": "170"
       },
       {
         "description": "Corona beer",
-        "icon_url": "/assets/beer_corona.png",
+        "icon_url": "👑",
         "name": "Corona",
         "price": "200"
       }
@@ -126,127 +126,127 @@
   "menu_items": [
     {
       "description": "Freshly brewed coffee with your choice of style",
-      "icon_url": "/assets/coffee.png",
+      "icon_url": "☕",
       "name": "Coffee",
       "price": "90"
     },
     {
       "description": "Strong black coffee",
-      "icon_url": "/assets/black_coffee.png",
+      "icon_url": "☕",
       "name": "Black Coffee",
       "price": "70"
     },
     {
       "description": "Refreshing can/bottle of Coke",
-      "icon_url": "/assets/coke.png",
+      "icon_url": "🥤",
       "name": "Coke",
       "price": "60"
     },
     {
       "description": "Fresh pineapple juice",
-      "icon_url": "/assets/pineapple_juice.png",
+      "icon_url": "🍍",
       "name": "Pineapple Juice",
       "price": "150"
     },
     {
       "description": "Creamy banana yogurt drink",
-      "icon_url": "/assets/banana_lassi.png",
+      "icon_url": "🍌",
       "name": "Banana Lassi",
       "price": "150"
     },
     {
       "description": "Sweet mango yogurt drink",
-      "icon_url": "/assets/mango_lassi.png",
+      "icon_url": "🥭",
       "name": "Mango Lassi",
       "price": "150"
     },
     {
       "description": "Traditional sweet yogurt drink",
-      "icon_url": "/assets/sweet_lassi.png",
+      "icon_url": "🥛",
       "name": "Sweet Lassi",
       "price": "120"
     },
     {
       "description": "Refreshing spiced buttermilk",
-      "icon_url": "/assets/buttermilk.png",
+      "icon_url": "🥛",
       "name": "Buttermilk",
       "price": "150"
     },
     {
       "description": "Bottled mineral water",
-      "icon_url": "/assets/water_bottle_80_px.png",
+      "icon_url": "💧",
       "name": "Water",
       "price": "20"
     },
     {
       "description": "Refreshing lime soda",
-      "icon_url": "/assets/lime_soda.png",
+      "icon_url": "🍋",
       "name": "Lime Soda",
       "price": "70"
     },
     {
       "description": "Energy drink",
-      "icon_url": "/assets/redbull.png",
+      "icon_url": "🏃",
       "name": "Red Bull",
       "price": "200"
     },
     {
       "description": "Pint of Kingfisher beer",
-      "icon_url": "/assets/beer_kingfisher.png",
+      "icon_url": "🍺",
       "name": "Kingfisher Beer",
       "price": "170"
     },
     {
       "description": "Classic dark rum",
-      "icon_url": "/assets/old_monk.png",
+      "icon_url": "🥃",
       "name": "Old Monk Rum",
       "price": "150"
     },
     {
       "description": "Corona beer",
-      "icon_url": "/assets/beer_corona.png",
+      "icon_url": "👑",
       "name": "Corona",
       "price": "200"
     },
     {
       "description": "Crispy golden french fries",
-      "icon_url": "/assets/french_fries.png",
+      "icon_url": "🍟",
       "name": "French Fries",
       "price": "150"
     },
     {
       "description": "Fresh vegetable sandwich",
-      "icon_url": "/assets/veg_sandwich.png",
+      "icon_url": "🥪",
       "name": "Veg Sandwich",
       "price": "150"
     },
     {
       "description": "Grilled chicken sandwich",
-      "icon_url": "/assets/chicken_sandwich.png",
+      "icon_url": "🥪",
       "name": "Chicken Sandwich",
       "price": "250"
     },
     {
       "description": "Crispy pastry with spiced potato filling (2 pcs)",
-      "icon_url": "/assets/samosa.png",
+      "icon_url": "🥟",
       "name": "Samosa",
       "price": "50"
     },
     {
       "description": "Yellow lentil curry with spices",
-      "icon_url": "/assets/dal_tadka.png",
+      "icon_url": "🥘",
       "name": "Dal Tadka",
       "price": "180"
     },
     {
       "description": "Plain steamed basmati rice",
-      "icon_url": "/assets/steamed_rice.png",
+      "icon_url": "🍚",
       "name": "Steamed Rice",
       "price": "150"
     },
     {
       "description": "Australian red wine by the glass",
-      "icon_url": "/assets/red_wine.png",
+      "icon_url": "🍷",
       "name": "Wine - Jacob Creek Red (glass)",
       "price": "200"
     }

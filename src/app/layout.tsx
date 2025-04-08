@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   title: "ServEasy",
   description: "2 Clicks and it's here",
   icons: {
-    icon: "/serveasy.png",
-    apple: "/serveasy.png",
+    icon: "/serveasy.jpg",
+    apple: "/serveasy.jpg",
   },
 };
 

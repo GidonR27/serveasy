@@ -135,8 +135,8 @@ export default function Home() {
                   <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center text-4xl mb-2 shadow-inner">
                     {categoryIcons[item.category] || '🍴'}
                   </div>
-                  <h3 className="font-semibold text-sm text-black text-center mb-1">{item.name}</h3>
-                  <p className="text-xs text-amber-800 font-semibold mb-3">${item.price.toFixed(2)}</p>
+                  <h3 className="font-semibold text-gray-900 text-sm text-center mb-1">{item.name}</h3>
+                  <p className="text-xs text-amber-900 mb-3 font-semibold">${item.price.toFixed(2)}</p>
                   <div className="flex items-center space-x-3">
                     {getItemQuantity(item.id) > 0 && (
                       <>
@@ -267,7 +267,7 @@ export default function Home() {
                     <span className="text-sm font-bold text-amber-800">{item.quantity}x</span>
                   </div>
                   <div>
-                    <p className="font-semibold text-black">{item.menuItem.name}</p>
+                    <p className="font-medium">{item.menuItem.name}</p>
                     {item.selectedOptions && Object.entries(item.selectedOptions).length > 0 && (
                       <p className="text-xs text-gray-500">
                         {Object.entries(item.selectedOptions).map(([key, value]) => `${key}: ${value}`).join(', ')}
@@ -275,7 +275,7 @@ export default function Home() {
                     )}
                   </div>
                 </div>
-                <p className="font-semibold text-amber-800">${(item.menuItem.price * item.quantity).toFixed(2)}</p>
+                <p className="font-medium text-amber-800">${(item.menuItem.price * item.quantity).toFixed(2)}</p>
               </div>
             ))}
             

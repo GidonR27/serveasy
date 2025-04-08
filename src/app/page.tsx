@@ -19,6 +19,16 @@ const categoryIcons: Record<string, string> = {
   'Soups': '🥣',
 };
 
+// Get unique categories from menuItems
+const getUniqueCategories = () => {
+  const categories = menuItems.map(item => item.category);
+  // Filter out Appetizers, Soups, and Beverages since we'll add it manually
+  const uniqueCategories = [...new Set(categories)].filter(cat => 
+    cat !== 'Appetizers' && cat !== 'Soups' && cat !== 'Beverages'
+  );
+  return ['Top 20', 'All', 'Beverages', 'Food', ...uniqueCategories];
+};
+
 export default function Home() {
   const [orderItems, setOrderItems] = useState<OrderItem[]>([]);
   const [roomNumber] = useState('27'); // Fixed room number
@@ -26,6 +36,24 @@ export default function Home() {
   const [showOptions, setShowOptions] = useState<string | null>(null);
   const [selectedOptions, setSelectedOptions] = useState<{[key: string]: string}>({});
   const [showOrderDetails, setShowOrderDetails] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState('Top 20');
+
+  // Filter menu items based on selected category
+  const filteredMenuItems = menuItems.filter(item => {
+    if (selectedCategory === 'All') return true;
+    if (selectedCategory === 'Top 20') {
+      // Sort by rating or popularity and return top 20
+      return item.popularity && item.popularity >= 3;
+    }
+    if (selectedCategory === 'Beverages') return item.category === 'Beverages';
+    if (selectedCategory === 'Food') return item.category !== 'Beverages';
+    return item.category === selectedCategory;
+  });
+
+  // Sort top 20 items to the beginning if that category is selected
+  const sortedMenuItems = selectedCategory === 'Top 20' 
+    ? [...filteredMenuItems].sort((a, b) => (b.popularity || 0) - (a.popularity || 0)).slice(0, 20)
+    : filteredMenuItems;
 
   const addToOrder = (item: MenuItem) => {
     if (item.options) {
@@ -126,9 +154,28 @@ export default function Home() {
 
       {/* Main Content */}
       <div className="max-w-md mx-auto px-4 pt-5 pb-4">
+        {/* Category Navigation */}
+        <div className="mb-6 overflow-x-auto pb-2">
+          <div className="flex space-x-2 min-w-max">
+            {getUniqueCategories().map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap ${
+                  selectedCategory === category
+                    ? 'bg-amber-600 text-white'
+                    : 'bg-white text-amber-800 border border-amber-200'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </div>
+
         {/* Menu Grid */}
         <div className="grid grid-cols-2 gap-4 mb-20">
-          {menuItems.map((item) => (
+          {sortedMenuItems.map((item) => (
             <div key={item.id} className="bg-white rounded-lg shadow-md overflow-hidden border border-amber-100">
               <div className="p-3">
                 <div className="flex flex-col items-center">
